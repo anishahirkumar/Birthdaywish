@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(-2deg); }
+  25% { opacity: 0.8; transform: scale(1.1) rotate(2deg); }
+  50% { opacity: 0.9; transform: scale(0.95) rotate(-1deg); }
+  75% { opacity: 1; transform: scale(1.05) rotate(1deg); }
+}
+
+@keyframes blow-out {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+@keyframes smoke-rise {
+  0% { opacity: 0.8; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-60px) scale(2); }
+}
+
+@keyframes explode-light {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(3); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #ec4899; }
+}
+
+@keyframes jar-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes note-fly {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
+}
+
+@keyframes star-connect {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes scratch-reveal {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(100% at 50% 50%); }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.4); }
+  50% { box-shadow: 0 0 60px rgba(236, 72, 153, 0.8), 0 0 100px rgba(168, 85, 247, 0.4); }
+}
+
+@keyframes letter-drop {
+  0% { opacity: 0; transform: translateY(-20px) rotate(-10deg); }
+  60% { transform: translateY(5px) rotate(2deg); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-flicker { animation: flicker 0.5s ease-in-out infinite; }
+.animate-blow-out { animation: blow-out 0.5s ease-out forwards; }
+.animate-smoke { animation: smoke-rise 1.5s ease-out forwards; }
+.animate-explode { animation: explode-light 1s ease-out forwards; }
+.animate-jar-wiggle { animation: jar-wiggle 0.5s ease-in-out; }
+.animate-note-fly { animation: note-fly 1s ease-out forwards; }
+.animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-confetti { animation: confetti 3s linear forwards; }
+.animate-shimmer { 
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite; 
+}
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-letter-drop { animation: letter-drop 0.5s ease-out forwards; }
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient-flow 4s ease infinite;
+}
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.scratch-canvas {
+  cursor: crosshair;
+  touch-action: none;
+}
+
+body {
+  overflow-x: hidden;
+  background: #0a0015;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a0030; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#ec4899, #a855f7); border-radius: 3px; }
